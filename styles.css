@@ -19,8 +19,6 @@
 	padding: 12px 0;
 }
 
-/* global class end */
-
 #landing_page {
 	height: 100vh;
 	background: linear-gradient(
@@ -76,6 +74,8 @@ nav {
 	background-color: #0c134f;
 	position: fixed;
 	width: 100%;
+	z-index: 1;
+	/* z-index: 9999; */
 }
 
 nav .small {
@@ -183,6 +183,7 @@ ul .nav_link:hover {
 	display: flex;
 	flex-flow: row wrap;
 	padding: 0 32px;
+	width: 100%;
 }
 
 #about div {
@@ -304,6 +305,294 @@ ul .nav_link:hover {
 
 /* tech stack end */
 
+/* Resume start */
+
+#resume {
+	display: flex;
+	flex-direction: row wrap;
+	/* position: relative; */
+}
+
+#resume #resume_links {
+	flex-basis: 20%;
+	position: sticky;
+	top: 0;
+	height: 100vh;
+	list-style: none;
+	background-color: #0c134f;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	gap: 5%;
+	padding: 0 32px;
+}
+
+#resume div {
+	flex-basis: 80%;
+	padding: 24px;
+	background-color: #faf9f0;
+}
+
+#resume .resume_link {
+	display: inline-block;
+	padding: 16px 32px;
+	width: 100%;
+	text-decoration: none;
+	font-size: 1rem;
+	color: #73bbc9;
+	overflow-wrap: break-word;
+}
+
+#resume ul a:hover {
+	color: #d4adfc;
+}
+
+#resume .activeResumeLink {
+	color: #faf9f0;
+}
+
+#resume .activeResumeLink::before {
+	content: "↪";
+}
+
+.resume_title {
+	font-size: 2.5rem;
+	color: #0c134f;
+	border-bottom: 3px solid #d4adfc;
+}
+
+/* objective start */
+#objective h3 {
+	font-size: 2.5rem;
+	color: #0c134f;
+}
+
+#objective p {
+	font-size: 1.1rem;
+	color: #73bbc9;
+	line-height: 1.5;
+	padding: 12px 0;
+}
+/* objective end */
+
+/* education start */
+
+#education h3 {
+	font-size: 2.5rem;
+	color: #0c134f;
+}
+
+.resume_educ {
+	margin: 24px 0;
+}
+
+.resume_educ .ay {
+	color: #1d267d;
+	font-size: 1.2rem;
+}
+
+.resume_educ h4 {
+	font-size: 2rem;
+	color: #1d267d;
+	margin: 8px 0;
+}
+
+.resume_educ .school_name {
+	font-size: 1.4rem;
+	color: #73bbc9;
+}
+
+#education div {
+	padding: 0;
+}
+
+/* education end */
+
+/* relevant coursework */
+
+.course_work {
+	list-style: none;
+	margin: 12px 0;
+}
+
+.course_work li:not(:last-child) {
+	margin-bottom: 12px;
+}
+
+.course_work h5 {
+	font-size: 1.3rem;
+	color: #1d267d;
+}
+
+.course_work p {
+	font-size: 1.1rem;
+	color: #73bbc9;
+	margin-top: 8px;
+}
+
+.course_work a {
+	color: #1d267d;
+}
+
+.course_work a:hover {
+	color: #d4adfc;
+}
+
+.course_work a:visited {
+	color: #d4adfc;
+}
+
+/* relevant coursework end */
+
+/* tech skill start */
+
+#technical_skills .skills {
+	padding: 0;
+	display: flex;
+	flex-flow: row wrap;
+	margin: 12px 0;
+}
+
+#technical_skills .skills p:first-child {
+	flex-basis: 40%;
+	font-size: 1.2rem;
+	color: #0c134f;
+}
+
+#technical_skills .skills p:last-child {
+	flex-basis: 60%;
+	font-size: 1.1rem;
+	color: #73bbc9;
+}
+
+/* tech skill end */
+
+/* extra curri start */
+
+.coding_compete ul {
+	list-style: none;
+	padding: 0 0 0 24px;
+}
+
+.coding_compete li:not(:last-child) {
+	margin-bottom: 12px;
+}
+
+.coding_compete li {
+	color: #73bbc9;
+}
+
+.coding_compete h4 {
+	font-size: 2rem;
+	color: #1d267d;
+}
+/* extra curri end */
+
+/* Resume end */
+
+/* Projects start*/
+
+/* carousel start */
+.carousel {
+	position: relative;
+}
+
+.carousel:hover button {
+	opacity: 0.8;
+}
+
+.carousel button {
+	margin: 0 12px;
+	opacity: 0;
+	border: none;
+	background-color: #faf9f0;
+	font-size: 1.5rem;
+	color: #0c134f;
+	height: 35px;
+	width: 35px;
+	border-radius: 50%;
+	text-align: center;
+	padding: 4px;
+}
+
+.prev {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	cursor: pointer;
+}
+
+.next {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	cursor: pointer;
+}
+
+.show-image {
+	display: block;
+}
+
+.hide-image {
+	display: none;
+}
+
+#projects {
+	padding: 0 36px;
+}
+
+.projects {
+	display: flex;
+	gap: 4%;
+	padding: 24px 0;
+	flex-flow: row wrap;
+}
+
+.project {
+	flex-basis: 48%;
+	margin-bottom: 2.5%;
+	padding: 12px;
+}
+
+.project_images {
+	/* width: 100%; */
+	height: 250px;
+	border-top-left-radius: 25px;
+	border-top-right-radius: 25px;
+	overflow: hidden;
+	border-bottom: 2px solid #0c134f;
+}
+
+.project_images img {
+	width: 100%;
+	height: 100%;
+	max-height: 250px;
+	object-fit: fill;
+}
+/* carousel end*/
+
+.project_details {
+	background-color: #faf9f0;
+	padding: 12px 12px 36px 12px;
+}
+.project_title {
+	font-size: 1.5rem;
+	color: #0c134f;
+	padding-top: 12px;
+}
+
+.project_description {
+	font-size: 1.1rem;
+	color: #73bbc9;
+	margin-top: 12px;
+}
+
+.project_links {
+	margin-top: 12px;
+}
+
+/* Projects end */
+
 /* Small Desktops */
 @media (max-width: 992px) {
 	.section_title {
@@ -330,7 +619,7 @@ ul .nav_link:hover {
 		flex-basis: 23.5%;
 	}
 }
-/* Tables */
+/* Tablets */
 @media (max-width: 768px) {
 	.section_title {
 		font-size: 2rem;
@@ -352,6 +641,11 @@ ul .nav_link:hover {
 	}
 	.tech_stack div {
 		flex-basis: 32%;
+	}
+
+	.projects {
+		flex-flow: column wrap;
+		flex-basis: 100%;
 	}
 }
 /* Mobile Phone */
@@ -398,7 +692,11 @@ ul .nav_link:hover {
 		font-size: 0.8rem;
 	}
 
-	/* .tech_stack; */
-}
+	#resume {
+		flex-flow: column nowrap;
+	}
 
-/*  */
+	#resume #resume_links {
+		position: static;
+	}
+}
