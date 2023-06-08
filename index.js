@@ -20,39 +20,54 @@ function changeImageShow(images,current) {
     })
 }
 
-carouselRef.forEach(carousel => {
-
-    const images = carousel.querySelectorAll('.project_image')
-    const prevBtn = carousel.querySelector('.prev')
-    const nextBtn = carousel.querySelector('.next')
-    
-
-    let current = 0;
-    const lastIndex = images.length - 1;
-
-    
-
-    prevBtn.addEventListener('click', function onPrevClick(){
-        console.log('prev')
-        if(current <= 0){
-            current = lastIndex;
-        }
-        else{
-            current--;
-        }
-        changeImageShow(images,current)
-    })
-
-    nextBtn.addEventListener('click', function onNextClick(){
-        console.log('next')
+function changeIndexImage(action, current, lastIndex) {
+    if(action === 'next'){
         if(current >= lastIndex){
             current = 0;
         }
         else{
             current++;
         }
+    }
+    else{
+        if(current <= 0){
+            current = lastIndex;
+        }
+        else{
+            current--;
+        }
+    }
+
+    return current;
+}
+
+
+
+
+carouselRef.forEach(carousel => {
+
+    const images = carousel.querySelectorAll('.project_image')
+    const prevBtn = carousel.querySelector('.prev')
+    const nextBtn = carousel.querySelector('.next')
+
+    let current = 0;
+    const lastIndex = images.length - 1;
+
+    prevBtn.addEventListener('click', function onPrevClick(){
+        current = changeIndexImage('prev', current, lastIndex)
         changeImageShow(images,current)
     })
+
+    nextBtn.addEventListener('click', function onNextClick(){
+        current = changeIndexImage('next', current, lastIndex)
+        changeImageShow(images,current)
+    })
+
+
+    setInterval(() => {
+        current = changeIndexImage('next', current, lastIndex)
+        changeImageShow(images,current)
+    }, 10000);
  })
 
 hamItemsRef.forEach(item => {
@@ -127,10 +142,4 @@ window.onscroll = function onScroll(){
     })
 
 };
-
-
-
-
-
-// check if screen is >= 992 then close menu
 
